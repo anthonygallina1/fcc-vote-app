@@ -1,5 +1,7 @@
 // Load env settings
-require('dotenv').load({path: '../env/.env'});
+require('dotenv').load(process.env.ENV_PATH ? {
+    path: process.env.ENV_PATH
+} : undefined);
 
 const express = require('express')
 , app = express()
@@ -24,11 +26,6 @@ mongoose.connect(process.env.DB);
 mongoose.connection.on('error', function () {
     throw new Error('unable to connect to database');
 });
-
-// const ReactRouter = require('react-router')
-// , match = ReactRouter.match;
-
-
 
 // Static serve our assets folder
 app.use(express.static('dist/'));

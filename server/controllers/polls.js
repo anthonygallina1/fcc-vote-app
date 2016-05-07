@@ -5,9 +5,6 @@ const router = require('express').Router()
 
 
 // AUTH/GITHUB
-
-
-
 router
 .get('/logout', function(req,res,next){
     req.logout();
