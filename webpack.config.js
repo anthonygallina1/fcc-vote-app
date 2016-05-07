@@ -7,7 +7,7 @@ module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   //entry: "./js/app.js",
-  entry: ["babel-polyfill", "./js/app.js"],
+  entry: ["./js/app.js"],
   module: {
     loaders: [
       {
@@ -23,7 +23,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/dist/js",
-    filename: "app.min.js"
+    filename: "bundle.js"
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),

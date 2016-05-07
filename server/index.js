@@ -30,6 +30,9 @@ mongoose.connection.on('error', function () {
 // Static serve our assets folder
 app.use(express.static('dist/'));
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

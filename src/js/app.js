@@ -1,14 +1,14 @@
 "use strict";
 
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { connect } from 'react-redux';
 
-
 import PollReducer from "./reducers/PollReducer";
 import PollList from "./components/PollList";
+import Header from "./components/Header";
 
 const app = document.getElementById('app');
 
@@ -18,8 +18,11 @@ const store = createStore(
     })
 );
 
+
+
 const App = ({ onClick }) => (
     <div>
+        <Header title="Voting App"/>
         <PollList />
         <div>
             <button onClick= { onClick }>ADD POLL</button>
