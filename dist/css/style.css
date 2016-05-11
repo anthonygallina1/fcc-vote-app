@@ -2,3 +2,14 @@ body {
     background: ghostwhite;    
     margin: 0;
 }
+
+header {
+    background: limegreen;
+    display: flex;
+   
+}
+
+header h3 { 
+    padding: 0; margin: 0; 
+    flex:1;
+}
